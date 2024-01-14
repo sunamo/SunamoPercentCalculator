@@ -3,11 +3,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>24.1.7.1</Version>
-	  <Description>Can be used in ProgressBar etc.</Description>
+    <Version>24.1.11.1</Version>
+    <Description>Can be used in ProgressBar etc.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="SunamoExceptions" Version="24.1.5.1" />
+    <PackageReference Include="SunamoExceptions" Version="24.1.11.1" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
