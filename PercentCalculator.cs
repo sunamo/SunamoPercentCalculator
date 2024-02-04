@@ -3,7 +3,7 @@ namespace SunamoPercentCalculator;
 /// <summary>
 /// Normálně se volá 100x DonePartially()
 /// </summary>
-public class PercentCalculator
+public class PercentCalculator : IPercentCalculator
 {
     public double onePercent = 0;
     public double last = 0;
