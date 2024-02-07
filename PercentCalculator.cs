@@ -1,16 +1,24 @@
+using SunamoInterfaces.Interfaces;
+
 namespace SunamoPercentCalculator;
 
 /// <summary>
 /// Normálně se volá 100x DonePartially()
 /// </summary>
 public class PercentCalculator : IPercentCalculator
+//: IPercentCalculator
 {
     public double onePercent = 0;
-    public double last = 0;
-    public double _overallSum;
+    public double last { get; set; } = 0;
+    public double _overallSum { get; set; }
     private double _hundredPercent = 100d;
 
     int added = 0;
+
+    public IPercentCalculator Create(double overallSum)
+    {
+        return new PercentCalculator(overallSum);
+    }
 
     public void AddOnePercent()
     {
