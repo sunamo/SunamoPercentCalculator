@@ -1,11 +1,18 @@
 
 
-namespace SunamoPercentCalculator;
+namespace
+#if SunamoCollections
+    SunamoCollections
+#else
+    SunamoPercentCalculator
+#endif
+;
+
 
 /// <summary>
 /// Normálně se volá 100x DonePartially()
 /// </summary>
-public class PercentCalculator : IPercentCalculator
+public class PercentCalculator //: IPercentCalculator
 //: IPercentCalculator
 {
     public double onePercent = 0;
@@ -15,7 +22,7 @@ public class PercentCalculator : IPercentCalculator
 
     int added = 0;
 
-    public IPercentCalculator Create(double overallSum)
+    public PercentCalculator Create(double overallSum)
     {
         return new PercentCalculator(overallSum);
     }
