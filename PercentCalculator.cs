@@ -2,7 +2,7 @@
 
 namespace
 #if SunamoCollections
-    SunamoCollections
+SunamoCollections
 #else
 SunamoPercentCalculator
 #endif
