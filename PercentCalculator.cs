@@ -1,5 +1,7 @@
 
 
+using System.Diagnostics;
+
 namespace
 #if SunamoCollections
 SunamoCollections
