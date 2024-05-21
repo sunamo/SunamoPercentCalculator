@@ -82,7 +82,7 @@ public class PercentCalculator //: IPercentCalculator
 #if DEBUG
         if (result == -2147483648)
         {
-            Debugger.Break();
+            System.Diagnostics.Debugger.Break();
         }
 #endif
         return result;
