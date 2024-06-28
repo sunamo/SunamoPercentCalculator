@@ -1,11 +1,4 @@
 using System.Diagnostics;
-namespace
-#if SunamoCollections
-SunamoCollections
-#else
-SunamoPercentCalculator
-#endif
-;
 /// <summary>
 /// Normálně se volá 100x DonePartially()
 /// </summary>
