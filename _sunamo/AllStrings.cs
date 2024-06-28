@@ -1,3 +1,5 @@
+
+namespace SunamoPercentCalculator;
 public class AllStrings
 {
     public const string dot = ".";

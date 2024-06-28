@@ -1,3 +1,5 @@
+
+namespace SunamoPercentCalculator;
 using System.Diagnostics;
 using System.Text;
 

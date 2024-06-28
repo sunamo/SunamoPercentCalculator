@@ -1,3 +1,5 @@
+
+namespace SunamoPercentCalculator;
 using System.Diagnostics;
 /// <summary>
 /// Normálně se volá 100x DonePartially()
