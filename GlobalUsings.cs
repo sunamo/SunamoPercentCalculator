@@ -13,3 +13,5 @@ global using SunamoPercentCalculator._sunamo.SunamoValues;
 global using SunamoPercentCalculator._sunamo.SunamoXlfKeys;
 global using SunamoPercentCalculator._sunamo.SunamoExceptions.OnlyInSE;
 global using SunamoPercentCalculator._sunamo.SunamoExceptions._AddedToAllCsproj;
+global using System.Net;
+global using System.Threading.Tasks;

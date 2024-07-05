@@ -1,4 +1,3 @@
-
 namespace SunamoPercentCalculator._sunamo.SunamoExceptions._AddedToAllCsproj;
 internal class SHSunamoExceptions
 {

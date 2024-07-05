@@ -1,4 +1,3 @@
-
 namespace SunamoPercentCalculator._sunamo.SunamoExceptions.OnlyInSE;
 internal class TranslateAble
 {
