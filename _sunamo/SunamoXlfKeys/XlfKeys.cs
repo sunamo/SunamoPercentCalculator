@@ -1,4 +1,4 @@
-namespace SunamoPercentCalculator;
+namespace SunamoPercentCalculator._sunamo.SunamoXlfKeys;
 
 
 

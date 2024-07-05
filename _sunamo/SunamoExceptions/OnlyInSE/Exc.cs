@@ -1,5 +1,5 @@
 
-namespace SunamoPercentCalculator;
+namespace SunamoPercentCalculator._sunamo.SunamoExceptions.OnlyInSE;
 using System.Diagnostics;
 using System.Text;
 
