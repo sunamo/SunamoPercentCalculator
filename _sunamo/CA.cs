@@ -1,4 +1,4 @@
-//namespace SunamoPercentCalculator._sunamo.SunamoExceptions._AddedToAllCsproj;
+namespace SunamoPercentCalculator._sunamo;
 
 internal class CA
 {
