@@ -8,3 +8,4 @@ global using System.Linq;
 global using SunamoPercentCalculator._sunamo.SunamoExceptions;
 global using System.Reflection;
 global using System.Net;
+global using System.Diagnostics.CodeAnalysis;
