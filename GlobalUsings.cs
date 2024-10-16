@@ -5,7 +5,7 @@ global using System.Collections.Generic;
 global using System.Collections;
 global using System.IO;
 global using System.Linq;
-global using SunamoPercentCalculator._sunamo.SunamoValues;
+global using SunamoPercentCalculator;
 global using SunamoPercentCalculator._sunamo.SunamoExceptions;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Reflection;
