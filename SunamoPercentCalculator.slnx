@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SunamoPercentCalculator.Tests\\SunamoPercentCalculator.Tests.csproj" />
+  <Project Path="RunnerPercentCalculator\\RunnerPercentCalculator.csproj" />
+  <Project Path="SunamoPercentCalculator\SunamoPercentCalculator.csproj" />
+</Solution>
