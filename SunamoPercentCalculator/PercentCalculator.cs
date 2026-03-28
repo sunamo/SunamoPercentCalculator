@@ -1,74 +1,87 @@
 namespace SunamoPercentCalculator;
 
 /// <summary>
-///     Normálně se volá 100x DonePartially()
+/// Calculator for percentage distribution. Typically called multiple times via DonePartially().
 /// </summary>
-public class PercentCalculator //: IPercentCalculator
-//: IPercentCalculator
+public class PercentCalculator
 {
-    public static Type type = typeof(PercentCalculator);
-    private readonly double _hundredPercent = 100d;
-    private int _sum;
-    private int added;
-    public double onePercent;
+    /// <summary>
+    /// The type of this class, for reflection purposes.
+    /// </summary>
+    public static Type PercentCalculatorType { get; set; } = typeof(PercentCalculator);
 
+    private readonly double hundredPercent = 100d;
+    private int sum;
+
+    /// <summary>
+    /// The value of one percent relative to the overall sum.
+    /// </summary>
+    public double OnePercent { get; set; }
+
+    /// <summary>
+    /// Creates a new instance of PercentCalculator with the specified overall sum.
+    /// </summary>
+    /// <param name="overallSum">The total sum representing 100%.</param>
     public PercentCalculator(double overallSum)
     {
         if (overallSum == 0) ThrowEx.DivideByZero();
-        onePercent = _hundredPercent / overallSum;
-        _overallSum = overallSum;
+        OnePercent = hundredPercent / overallSum;
+        OverallSum = overallSum;
     }
 
-    public double last { get; set; }
-    public double _overallSum { get; set; }
+    /// <summary>
+    /// The last computed percentage value.
+    /// </summary>
+    public double Last { get; set; }
 
-    public PercentCalculator Create(double overallSum)
+    /// <summary>
+    /// The overall sum representing 100%.
+    /// </summary>
+    public double OverallSum { get; set; }
+
+    /// <summary>
+    /// Creates a new PercentCalculator instance with the specified overall sum.
+    /// </summary>
+    /// <param name="overallSum">The total sum representing 100%.</param>
+    /// <returns>A new PercentCalculator instance.</returns>
+    public static PercentCalculator Create(double overallSum)
     {
         return new PercentCalculator(overallSum);
     }
 
+    /// <summary>
+    /// Adds one percent to the accumulated Last value.
+    /// </summary>
     public void AddOnePercent()
     {
-        added++;
-        last += onePercent;
+        Last += OnePercent;
     }
 
     /// <summary>
-    ///     Dont know when is AddOne more useful than AddOnePercent => private
-    /// </summary>
-    private void AddOne()
-    {
-        last += 1;
-    }
-
-    /// <summary>
-    ///     Is automatically called with PercentFor with last
+    /// Resets the computed sum to zero. Automatically called by PercentFor when isLast is true.
     /// </summary>
     public void ResetComputedSum()
     {
-        _sum = 0;
-        Func<string, short> d = short.Parse;
+        sum = 0;
     }
 
     /// <summary>
-    ///     Was used for generating text output with inBothCount, files1Count, files2Count
+    /// Calculates the percentage for a given value relative to the overall sum.
     /// </summary>
-    /// <param name="value"></param>
-    /// <param name="last"></param>
-    /// <returns></returns>
-    public int PercentFor(double value, bool last)
+    /// <param name="value">The value to calculate the percentage for.</param>
+    /// <param name="isLast">Whether this is the last calculation, triggering adjustment to ensure total equals 100%.</param>
+    /// <returns>The calculated percentage as an integer.</returns>
+    public int PercentFor(double value, bool isLast)
     {
-        // cannot divide by zero
-        if (_overallSum == 0) return 0;
-        // value - 
-        // 
-        var quocient = value / _overallSum;
-        var result = (int)(_hundredPercent * quocient);
-        _sum += result;
-        if (last)
+        if (OverallSum == 0) return 0;
+
+        var quotient = value / OverallSum;
+        var result = (int)(hundredPercent * quotient);
+        sum += result;
+        if (isLast)
         {
-            var diff = _sum - 100;
-            if (_sum != 0) result -= diff;
+            var difference = sum - 100;
+            if (sum != 0) result -= difference;
             ResetComputedSum();
         }
 #if DEBUG
