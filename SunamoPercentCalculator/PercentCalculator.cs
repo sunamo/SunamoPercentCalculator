@@ -44,10 +44,7 @@ public class PercentCalculator
     /// </summary>
     /// <param name="overallSum">The total sum representing 100%.</param>
     /// <returns>A new PercentCalculator instance.</returns>
-    public static PercentCalculator Create(double overallSum)
-    {
-        return new PercentCalculator(overallSum);
-    }
+    public static PercentCalculator Create(double overallSum) => new(overallSum);
 
     /// <summary>
     /// Adds one percent to the accumulated Last value.
@@ -84,9 +81,6 @@ public class PercentCalculator
             if (sum != 0) result -= difference;
             ResetComputedSum();
         }
-#if DEBUG
-        if (result == -2147483648) Debugger.Break();
-#endif
         return result;
     }
 }
