@@ -1,5 +1,10 @@
 # SunamoPercentCalculator
 
+## Short description
+
+Knihovna pro výpočet procent postupu, použitelná například pro ProgressBar. Obsahuje Runner a testy.
+
+
 Can be used in ProgressBar etc.
 
 ## Overview
